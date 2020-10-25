@@ -36,6 +36,8 @@ scatter = px.scatter(SQL_Query, x='longitud', y='latitud')
 #### application
 app = dash.Dash(__name__)
 
+server = app.server
+
 #### layout
 app.layout = html.Div(children=[
 
@@ -144,4 +146,4 @@ def date_output(n_clicks,start_date, end_date,in_hour, end_hour):
 
 #### Initiate server where app will work
 if __name__ == '__main__':
-    app.run_server(host ='127.0.0.1', debug=True)
+    app.run_server(debug=True)
